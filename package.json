@@ -4,7 +4,7 @@
   "description": "triggersHTML implements an auto init for triggers.js.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm link && cd tests && npm link triggerhtml && cd .. && mocha tests/*.test.js --reporter mochawesome --reporter-options reportDir=tests, reportFilename=testResults.txt"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/mdcoopir/triggersHTML/issues"
   },
-  "homepage": "https://github.com/mdcoopir/triggersHTML#readme"
+  "homepage": "https://github.com/mdcoopir/triggersHTML#readme",
+  "dependencies": {
+    "triggersjs": "^0.0.3"
+  }
 }
