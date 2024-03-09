@@ -1,0 +1,25 @@
+{
+  "name": "triggershtml",
+  "version": "0.0.1",
+  "description": "triggersHTML implements an auto init for triggers.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdcoopir/triggersHTML.git"
+  },
+  "keywords": [
+    "triggersjs",
+    "triggershtml",
+    "user",
+    "interaction"
+  ],
+  "author": "Mark Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdcoopir/triggersHTML/issues"
+  },
+  "homepage": "https://github.com/mdcoopir/triggersHTML#readme"
+}
