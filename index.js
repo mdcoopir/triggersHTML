@@ -1,6 +1,5 @@
 import {DOMExists} from 'triggersjs'
 import {_autoInitToggle, _autoInitTriggers} from './Util/core.js'; 
-import {DOMExists} from 'triggersjs'
 
 
 export const trigger_hello = () => {
