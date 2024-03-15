@@ -7,8 +7,8 @@ export const _autoInitToggle = (documentElement) => {
             name: el.hasAttribute('target') ? el.getAttribute('target'): 'default',
         }
         const triggerEvent = el.hasAttribute('triggerEvent') ? el.getAttribute('triggerEvent'): 'click';
-        const triggerCallback = el.hasAttribute('triggerCallback') ? documentElement[el.getAttribute('triggerCallback')]: null;
-        initTriggerToggles(selectorsParm, eventName, toggleCallback, documentElement)
+        const toggleCallback = el.hasAttribute('toggleCallback') ? documentElement[el.getAttribute('toggleCallback')]: documentElement["toggleCallback"];
+        initTriggerToggles(selectors, triggerEvent, toggleCallback, documentElement)
     })
 }
 export const _autoInitTriggers = () => {
