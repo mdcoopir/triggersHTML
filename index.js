@@ -31,7 +31,7 @@ if(DOMExists) {
     window.addEventListener("load", (event) => {
         console.log('window loaded')
         _autoInitToggle();
-        _autoInitTriggers(window);
+        _autoInitTriggers();
 
     })
 }

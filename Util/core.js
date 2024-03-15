@@ -1,14 +1,16 @@
 import {initTriggers, initTriggerToggles, DOMExists} from 'triggersjs'
 
-export const _autoInitToggle = (documentElement) => {
-    document.querySelectorAll('[toggleInit]').forEach((el) => {
+export const _autoInitToggle = () => {
+    window.document.querySelectorAll('[toggleInit]').forEach((el) => {
         const selectors = {
             classNames: el.getAttribute('toggleClasses').split(" "),
             name: el.hasAttribute('target') ? el.getAttribute('target'): 'default',
         }
         const triggerEvent = el.hasAttribute('triggerEvent') ? el.getAttribute('triggerEvent'): 'click';
-        const toggleCallback = el.hasAttribute('toggleCallback') ? documentElement[el.getAttribute('toggleCallback')]: documentElement["toggleCallback"];
-        initTriggerToggles(selectors, triggerEvent, toggleCallback, documentElement)
+        const toggleCallbackSting = el.hasAttribute('toggleCallback') ? el.getAttribute('toggleCallback'): null;
+        const toggleCallback = toggleCallbackSting ? window[toggleCallbackSting]: (window["toggleCallback"] != undefined) ? window['toggleCallback']: null;
+        if(toggleCallback == undefined) throw(new Error('triggerCalback is not defined'))
+        initTriggerToggles(selectors, triggerEvent, toggleCallback, window.document)
     })
 }
 export const _autoInitTriggers = () => {
@@ -18,11 +20,12 @@ export const _autoInitTriggers = () => {
         const triggerEvent = el.hasAttribute('triggerEvent') ? el.getAttribute('triggerEvent'): 'click';
         console.log(`triggerName = ${triggerName}`)
         console.log(`triggerEvent = ${triggerEvent}`)
-        const triggerCallbackSting = el.hasAttribute('triggerCallback') ? el.getAttribute('triggerCallback'): null;;
-        const triggerCallback = triggerCallbackSting ? window[triggerCallbackSting]: null;
+        const triggerCallbackSting = el.hasAttribute('triggerCallback') ? el.getAttribute('triggerCallback'): null;
+        const triggerCallback = triggerCallbackSting ? window[triggerCallbackSting]: (window["triggerCallback"] != undefined) ? window['triggerCallback']: null;
+        if(triggerCallback == undefined) throw(new Error('triggerCalback is not defined'))
         console.log(`triggerCallbackString = ${triggerCallbackSting}`)
         console.log(`typeof triggerCallback = ${typeof triggerCallback}`);
-        console.log(`window[trigerCallbackString] = ${window[triggerCallbackSting]}`);
+        console.log(`trigerCallbackString = ${triggerCallbackSting}`);
         console.log(`\n\nwindow.document.getElementById('triggerScript').toggleClassesCallback = ${window.document.getElementById('triggerScript').toggleClassesCallback}`)
         initTriggers(triggerName, triggerEvent, triggerCallback, window.document);
     
