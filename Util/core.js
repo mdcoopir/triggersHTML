@@ -8,8 +8,8 @@ export const _autoInitToggle = () => {
         }
         const triggerEvent = el.hasAttribute('triggerEvent') ? el.getAttribute('triggerEvent'): 'click';
         const toggleCallbackSting = el.hasAttribute('toggleCallback') ? el.getAttribute('toggleCallback'): null;
-        const toggleCallback = toggleCallbackSting ? window[toggleCallbackSting]: (window["toggleCallback"] != undefined) ? window['toggleCallback']: null;
-        if(toggleCallback == undefined) throw(new Error('triggerCalback is not defined'))
+        const toggleCallback = toggleCallbackSting ? window[toggleCallbackSting]: (window["toggleCallback"] == undefined) ? null: window['toggleCallback'];
+        if(toggleCallback == undefined && toggleCallback != null) throw(new Error('triggerCalback is not defined'))
         initTriggerToggles(selectors, triggerEvent, toggleCallback, window.document)
     })
 }
@@ -21,8 +21,8 @@ export const _autoInitTriggers = () => {
         console.log(`triggerName = ${triggerName}`)
         console.log(`triggerEvent = ${triggerEvent}`)
         const triggerCallbackSting = el.hasAttribute('triggerCallback') ? el.getAttribute('triggerCallback'): null;
-        const triggerCallback = triggerCallbackSting ? window[triggerCallbackSting]: (window["triggerCallback"] != undefined) ? window['triggerCallback']: null;
-        if(triggerCallback == undefined) throw(new Error('triggerCalback is not defined'))
+        const triggerCallback = triggerCallbackSting ? window[triggerCallbackSting]: (window["triggerCallback"] == undefined) ? null: window['triggerCallback'];
+        if(triggerCallback == undefined && triggerCallback != null) throw(new Error('triggerCalback is not defined'))
         console.log(`triggerCallbackString = ${triggerCallbackSting}`)
         console.log(`typeof triggerCallback = ${typeof triggerCallback}`);
         console.log(`trigerCallbackString = ${triggerCallbackSting}`);

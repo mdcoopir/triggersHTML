@@ -1,6 +1,6 @@
 {
   "name": "triggershtml",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "triggersHTML implements an auto init for triggers.js.",
   "main": "index.js",
   "type": "module",
