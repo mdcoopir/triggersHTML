@@ -23,7 +23,7 @@ export const autoInitToggle = () => {
 }
 
 export const autoInitTriggers = () => {
-    return _autoInitTriggers(window);
+    return _autoInitTriggers();
 }
 
 if(DOMExists) { 

@@ -1,6 +1,6 @@
 {
   "name": "triggershtml",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "triggersHTML implements an auto init for triggers.js.",
   "main": "index.js",
   "type": "module",
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/mdcoopir/triggersHTML#readme",
   "dependencies": {
     "sass": "^1.71.1",
-    "triggersjs": "^0.0.7"
+    "triggersjs": "^0.0.8"
   },
   "devDependencies": {
     "chai": "^5.0.0",
